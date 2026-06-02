@@ -26,5 +26,13 @@ public class StringLesson {
         String limString2 = "abcde";
         System.out.println(limitString==limString);
         System.out.println(limString2==limString);
+        StringBuilder sb = new StringBuilder("marco");
+        String nameKo = "marco";
+        // System.out.println(sb==nameKo);
+        System.out.println(sb.toString()==nameKo);
+        System.out.println(sb.toString().equals(nameKo));
+
+
+
     }
 }
