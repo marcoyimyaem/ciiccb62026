@@ -6,6 +6,7 @@ public class ConstructorLesson {
         Bunny bunny2 = new Bunny("Lola");
         Hamster hamster1 = new Hamster(2);
         Hamster hamster2 = new Hamster(2,"White");
+        Hamster hamster3 = new Hamster();
         System.out.println();
     }
 }
@@ -28,6 +29,9 @@ class Hamster{
     public Hamster(int weight,String color){ //2nd constructor
         this.weight = weight;
         this.color = color;
+    }
+    public Hamster(){
+        this(15,"pink");
     }
 }
 
