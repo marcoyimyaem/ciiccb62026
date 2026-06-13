@@ -36,7 +36,7 @@ public class LambdaLesson {
         TwoNumberOps mulTwoNums = (p,o,l)-> p*p+o;
         System.out.println(addTwoNums.aOpsB(6, 7,true));
         System.out.println(mulTwoNums.aOpsB(6,9, false));
-        DiscountItem tenPercent = (a)-> a-(a*0.10);
+        DiscountItem tenPercent = (double z)-> { return z-(z*0.10);};
         DiscountItem twentyPercent = (a)-> a-(a*0.20);
         DiscountItem fiftyPercent = (a)-> a-(a*0.50);
         double price = 1000;
