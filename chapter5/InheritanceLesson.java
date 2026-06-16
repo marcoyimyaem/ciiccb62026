@@ -83,6 +83,7 @@ class Wolf extends Canine{
         System.out.println(new Canine().getAverageWeight());
         System.out.println(new Wolf().getAverageWeight());
         Hayop h1 =  new Dog();
+        //Hayop h1 =  new Hayop();
        
 
     }
