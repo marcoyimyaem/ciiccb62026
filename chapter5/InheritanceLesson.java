@@ -1,4 +1,5 @@
 package chapter5;
+
 import java.util.*;
 
 public class InheritanceLesson{
@@ -52,6 +53,7 @@ class MountainLion extends Lion{
         System.out.println(ml.name);
     }
 }
+
 class Canine{
     static int dogFoodID = 5234;
     public boolean hasFangs = true;
@@ -83,8 +85,7 @@ class Wolf extends Canine{
         System.out.println(new Canine().getAverageWeight());
         System.out.println(new Wolf().getAverageWeight());
         Hayop h1 =  new Dog();
-        //Hayop h1 =  new Hayop();
-       
+
 
     }
 }
@@ -100,12 +101,12 @@ abstract class Hayop{
     abstract void setAge(int age);
 }
 abstract class Mammal extends Hayop{
-
+    
     abstract void sayImMammal();
 }
 class Dog extends Mammal{
     public String getName(){
-        return "My Dog name is"+name;
+        return name;
     }
     public int getAge(){
         return age;
@@ -115,12 +116,47 @@ class Dog extends Mammal{
         System.out.println("Im a Mammal");
     }
     public void setAge(int age){
-        this.age = age;
+        
+    }
+    // @Override // error
+    // List<Object> CanineList(String n) {
+    //     return null;
+    // }
+    
+    
+
+}
+abstract interface CanBurrow{
+    public static final int MINIMUM_DEPTH = 2;
+    public abstract int getMaximumDepth();
+}
+interface CanBurrow2 extends CanBurrow{
+    int MINIMUM_DEPTH2 = 2;
+    int getMaximumDepth2();
+    default int getMinDepth(){
+        return 1;
+    }
+    static boolean isInWater(){
+        return false;
     }
 
+}
+class FieldMouse extends Hayop implements CanBurrow,CanBurrow2{
+    public int getMaximumDepth(){
+        return MINIMUM_DEPTH -1;
+    }
+    public int getMaximumDepth2(){
+        return MINIMUM_DEPTH;
+    }
+    @Override
+    public String getName() {
+        return name;}
+    @Override
+    int getAge() {
+        return age;
+        }
+    @Override
+    void setAge(int age) {
+        }
     
-    //
-
-
-
 }
