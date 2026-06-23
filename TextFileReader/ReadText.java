@@ -8,18 +8,15 @@ import java.io.IOException;
 public class ReadText {
 
     public static void main(String[] args) {
-        String fileLocalString = "Source.txt";
+        String fileLocalString = "./TextFileReader/source.txt";
         System.out.println(System.getProperty("user.dir"));
         //(BufferedReader reader = new BufferedReader(new FileReader(fileLocalString))) 
-        try {
-            FileReader fr = new FileReader(fileLocalString);
-            BufferedReader reader = new BufferedReader(fr); 
-            String lines;
-            while ((lines = reader.readLine()) != null) {
-                System.out.println(lines);
-                
-            }
-        } catch (IOException e) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("./TextFileReader/source.txt"))) {
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException e) {
             // TODO: handle exception
             System.out.println("An error occurred during reading the file");
             System.out.println(e.getLocalizedMessage());
